@@ -1,4 +1,4 @@
-fndef MAIN_H
+#ifndef MAIN_H
 #define MAIN_H
 
 /* The main prototype for printf */
@@ -26,3 +26,5 @@ struct hastro kind[] =
 	{'%', kind_pcnt},
 	{'c', hastro_pchcar},
 };
+
+#endif
