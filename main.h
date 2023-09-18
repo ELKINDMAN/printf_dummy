@@ -7,24 +7,11 @@ int _printf(const char *format, ...);
 
 /* helper functions for the printf function */
 
-void kind_pstr(va_list JulienYahead);
-void hastro_pchcar(va_list JulienYahead);
-void kind_pcnt();
+int kind_pstr(va_list elkind);
+int hastro_pchcar(va_list elkind);
 
+/* int kind_pcnt(elkind); */
 
-/* structures for the function */
-
-struct hastro
-{
-        char specifiers;
-	void (*helpfx)(va_list);
-} fspec;
-
-struct hastro kind[] = 
-{
-	{'s', kind_pstr},
-	{'%', kind_pcnt},
-	{'c', hastro_pchcar},
-};
+int _putchar(char c);
 
 #endif
