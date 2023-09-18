@@ -22,6 +22,7 @@ int _printf(const char *format, ...)
 	{
 		{'s', kind_pstr},
 		{'c', hastro_pchcar},
+		{'d', hastro_int},
 	};
 
 	va_list(elkind);
@@ -30,7 +31,7 @@ int _printf(const char *format, ...)
 	for (k = 0; format[k] != '\0'; k++)
 	{
 		format++;
-		while (format++)
+		while (format)
 		{
 			if (format[k] == '%')
 			{
@@ -51,8 +52,13 @@ int _printf(const char *format, ...)
 					kind[0].helpfx(elkind);
 					chars_prntd + wds;
 				}
+				else if (format[k] == 'd' || 'i')
+				{
+					kind[2].helpfx(elkind);
+					chars_prntd++;
+				}
 			}
-			else 
+			else
 			{
 				_putchar(format[k]);
 				chars_prntd++;
@@ -60,4 +66,3 @@ int _printf(const char *format, ...)
 		}
 	}
 }
-
