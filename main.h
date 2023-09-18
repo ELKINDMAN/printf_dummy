@@ -9,6 +9,7 @@ int _printf(const char *format, ...);
 
 int kind_pstr(va_list elkind);
 int hastro_pchcar(va_list elkind);
+int hastro_int(va_list elkind);
 
 /* int kind_pcnt(elkind); */
 
