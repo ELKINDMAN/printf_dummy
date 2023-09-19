@@ -22,8 +22,8 @@ int _printf(const char *format, ...)
 
 	va_list(elkind);
 	va_start(elkind, format);
-	for (k = 0; format[k] != '\0'; k++)
-	{
+		for (k = 0; format[k] != '\0'; k++)
+		{
 			if (format[k] == '%')
 			{
 				k++;
@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 				_ourputchar(format[k]);
 				chars_prntd++;
 			}
-	}
+		}
 	va_end(elkind);
 	return (chars_prntd);
 }

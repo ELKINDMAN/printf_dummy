@@ -9,7 +9,7 @@ typedef struct
 {
 	char specifier;
 	int (*helpfx)(va_list);
-}
+} hastro;
 
 /* The main prototype for printf */
 
