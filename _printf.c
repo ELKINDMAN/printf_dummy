@@ -41,10 +41,12 @@ int _printf(const char *format, ...)
 				{
 					chars_prntd += kind[0].helpfx(elkind);
 				}
-				else if (format[k] == 'd' || format[k] == 'i')
+				else if (format[k] == 'd')
 				{
 					chars_prntd += kind[2].helpfx(elkind);
 				}
+				else if (format[k] == 'i')
+					chars_print += kind[3].helpfx(elkind);
 			}
 			else
 			{
