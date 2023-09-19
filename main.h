@@ -4,6 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/* structs for _printf.c */
+typedef struct
+{
+	char specifier;
+	int (*helpfx)(va_list);
+}
+
 /* The main prototype for printf */
 
 int _printf(const char *format, ...);

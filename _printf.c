@@ -13,12 +13,6 @@ int _printf(const char *format, ...)
 	size_t k;
 	int chars_prntd = 0;
 
-	typedef struct
-	{
-		char specifier;
-		int (*helpfx)(va_list);
-	} hastro;
-
 	hastro kind[] = {
 
 		{'s', kind_pstr},

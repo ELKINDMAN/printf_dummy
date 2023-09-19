@@ -3,8 +3,7 @@
 #include <stdarg.h>
 
 /**
- * hastro_int - This is a helper function for %i or %d 
- *
+ * hastro_int - This is a helper function for %i or %d
  * Return: Gives va_arg (elkind) as output
  */
 
@@ -14,7 +13,6 @@ int hastro_int(va_list elkind)
 
 	i_len = _ourputchar(va_arg(elkind, int));
 	return (i_len);
-	
 }
 
 int kind_pstr(va_list elkind)
@@ -23,8 +21,6 @@ int kind_pstr(va_list elkind)
 	char *str;
 
 	str = va_arg(elkind, char*);
-	
-
 	wds = strlen(str);
 
 	while (*str != '\0')
