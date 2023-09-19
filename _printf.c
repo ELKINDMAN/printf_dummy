@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{'s', kind_pstr},
 		{'c', hastro_pchcar},
 		{'d', hastro_int},
+		{'i', kanah_int},
 	};
 
 	va_list(elkind);
