@@ -13,6 +13,6 @@ int hastro_int(va_list elkind);
 
 /* int kind_pcnt(elkind); */
 
-int _putchar(char c);
+int _ourputchar(char c);
 
 #endif

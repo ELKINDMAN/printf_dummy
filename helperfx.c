@@ -17,18 +17,19 @@ int hastro_int(va_list elkind)
 
 int kind_pstr(va_list elkind)
 {
-	int wds;
+	int wds = 0;
 	char *str;
 
-	str = va_arg(elkind, char);
+	str = va_arg(elkind, char*);
 	
+
+	wds = strlen(str);
+
 	while (*str != '\0')
 	{
 		_ourputchar(*str);
 		str++;
 	}
-	wds = strlen(str);
-	
 	return (wds);
 }
 

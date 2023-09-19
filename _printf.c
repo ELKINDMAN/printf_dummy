@@ -30,16 +30,13 @@ int _printf(const char *format, ...)
 
 	for (k = 0; format[k] != '\0'; k++)
 	{
-		format++;
-		while (format)
-		{
 			if (format[k] == '%')
 			{
 				k++;
 				
 				if (format[k] == '%')
 				{
-					_putchar('%');
+					_ourputchar('%');
 					chars_prntd++;
 				}
 				else if (format[k] == 'c')
@@ -50,9 +47,9 @@ int _printf(const char *format, ...)
 				else if (format[k] == 's')
 				{
 					kind[0].helpfx(elkind);
-					chars_prntd + wds;
+					chars_prntd ++
 				}
-				else if (format[k] == 'd' || 'i')
+				else if (format[k] == 'd' || format[k] == 'i')
 				{
 					kind[2].helpfx(elkind);
 					chars_prntd++;
@@ -60,9 +57,10 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				_putchar(format[k]);
+				_ourputchar(format[k]);
 				chars_prntd++;
 			}
-		}
 	}
+	va_end(elkind);
+	return (chars_prntd);
 }
