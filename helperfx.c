@@ -1,4 +1,6 @@
 #include "main.h"
+#include <string.h>
+#include <stdarg.h>
 
 /**
  * hastro_int - This is a helper function for %i or %d 

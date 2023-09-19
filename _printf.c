@@ -1,4 +1,5 @@
 #include"main.h"
+#include <stdarg.h>
 
 /**
  * _printf - a function that produces output according to a format.
@@ -9,17 +10,17 @@
 int _printf(const char *format, ...);
 int _printf(const char *format, ...)
 {
-	size_t k, s;
+	size_t k;
 	int chars_prntd = 0;
 
 	typedef struct
 	{
 		char specifier;
-		void (*helpfx)(va_list);
+		int (*helpfx)(va_list);
 	} hastro;
 
-	hastro kind[] = 
-	{
+	hastro kind[] = {
+
 		{'s', kind_pstr},
 		{'c', hastro_pchcar},
 		{'d', hastro_int},
@@ -27,13 +28,11 @@ int _printf(const char *format, ...)
 
 	va_list(elkind);
 	va_start(elkind, format);
-
 	for (k = 0; format[k] != '\0'; k++)
 	{
 			if (format[k] == '%')
 			{
 				k++;
-				
 				if (format[k] == '%')
 				{
 					_ourputchar('%');
@@ -42,17 +41,15 @@ int _printf(const char *format, ...)
 				else if (format[k] == 'c')
 				{
 					kind[1].helpfx(elkind);
-					chars_prntd ++;
+					chars_prntd++;
 				}
 				else if (format[k] == 's')
 				{
-					kind[0].helpfx(elkind);
-					chars_prntd ++
+					chars_prntd += kind[0].helpfx(elkind);
 				}
 				else if (format[k] == 'd' || format[k] == 'i')
 				{
-					kind[2].helpfx(elkind);
-					chars_prntd++;
+					chars_prntd += kind[2].helpfx(elkind);
 				}
 			}
 			else
