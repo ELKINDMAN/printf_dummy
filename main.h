@@ -4,7 +4,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/* structs for _printf.c */
+/**
+ * struct - hastro for _printf.c
+ *
+ * Description will be added
+ * later on
+ */
+
 typedef struct
 {
 	char specifier;

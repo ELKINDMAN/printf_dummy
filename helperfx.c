@@ -61,7 +61,7 @@ int hastro_pchcar(va_list elkind)
 }
 
 /**
- * kanah_int - This function handles the fspec i
+ * helkanah_int - This function handles the fspec i
  *
  * @_int: The variable to be called by the macro (va_arg)
  *
@@ -86,15 +86,6 @@ void helkanah_int(int _int)
 	}
 	_ourputchar((_int % 10) + '0');
 }
-/**
-int kanah_int(va_list elkind)
-{
-	int i_fnc;
-
-	i_fnc = _ourputchar(va_arg(elkind, int));
-	return (i_fnc);
-}
-*/
 
 /**
  * our_int_len - This function gives the integer lenght
