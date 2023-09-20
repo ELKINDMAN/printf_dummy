@@ -88,21 +88,17 @@ void helkanah_int(int _int)
 }
 
 /**
- * our_int_len - This function gives the integer lenght
+ * kind_dec - This is a helper function for %i
  *
- * @k_int: This is the parameter for the integer lenght
+ * @elkind: variable storing the args for format
  *
- * Return: Gives the value of the integer lenght
+ * Return: Gives va_arg (elkind) as output
  */
 
-int our_int_len(int k_int)
+int kind_dec(va_list elkind)
 {
-	int our_len = 0;
+	int i_dec;
 
-	while (k_int > 0)
-	{
-		our_len++;
-		k_int /= 10;
-	}
-	return (our_len);
+	i_dec = _ourputchar(va_arg(elkind, int));
+	return (i_dec);
 }

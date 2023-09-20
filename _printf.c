@@ -18,6 +18,8 @@ int _printf(const char *format, ...)
 		{'s', kind_pstr},
 		{'c', hastro_pchcar},
 		{'d', hastro_int},
+		{'i', kind_dec},
+		{'o', k_octa},
 	};
 
 	va_list(elkind);
@@ -41,6 +43,18 @@ int _printf(const char *format, ...)
 				{
 					chars_prntd += kind[0].helpfx(elkind);
 				}
+				else if (format[k] == 'o')
+				{
+					unsigned int k_octa = va_arg(elkind, unsigned int);
+					if (k_octa == 0)
+					{
+						return (-1);
+					}
+					our_octa(k_octa);
+					prt_octa(k_octa);
+
+					chars_prntd += kind[4].helpfx(elkind);
+				}
 				else if (format[k] == 'd')
 				{
 					int hastro_int = va_arg(elkind, int);
@@ -53,6 +67,19 @@ int _printf(const char *format, ...)
 					helkanah_int(hastro_int);
 					chars_prntd += kind[2].helpfx(elkind);
 
+				}
+				else if (format[k] == 'i')
+				{
+					int kind_dec = va_arg(elkind, int);
+
+					if (kind_dec == 0)
+					{
+						return (-1);
+					}
+					our_int_len(kind_dec);
+					chars_prntd += kind[3].helpfx(elkind);
+
+					helkanah_int(kind_dec);
 				}
 			}
 			else
