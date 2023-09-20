@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 		{'s', kind_pstr},
 		{'c', hastro_pchcar},
 		{'d', hastro_int},
-		{'i', kanah_int},
 	};
 
 	va_list(elkind);
@@ -44,10 +43,17 @@ int _printf(const char *format, ...)
 				}
 				else if (format[k] == 'd')
 				{
+					int hastro_int = va_arg(elkind, int);
+
+					if (hastro_int == 0)
+					{
+						return (-1);
+					}
+					our_int_len(hastro_int);
+					helkanah_int(hastro_int);
 					chars_prntd += kind[2].helpfx(elkind);
+
 				}
-				else if (format[k] == 'i')
-					chars_prntd += kind[3].helpfx(elkind);
 			}
 			else
 			{
