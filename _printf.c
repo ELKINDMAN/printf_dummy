@@ -19,7 +19,10 @@ int _printf(const char *format, ...)
 		{'c', hastro_pchcar},
 		{'d', hastro_int},
 		{'i', kind_dec},
+
+		/**
 		{'o', k_octa},
+		*/
 	};
 
 	va_list(elkind);
@@ -43,6 +46,7 @@ int _printf(const char *format, ...)
 				{
 					chars_prntd += kind[0].helpfx(elkind);
 				}
+				/**
 				else if (format[k] == 'o')
 				{
 					unsigned int k_octa = va_arg(elkind, unsigned int);
@@ -55,6 +59,7 @@ int _printf(const char *format, ...)
 
 					chars_prntd += kind[4].helpfx(elkind);
 				}
+				*/
 				else if (format[k] == 'd')
 				{
 					int hastro_int = va_arg(elkind, int);
